@@ -18,24 +18,19 @@ namespace lospi
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override {
 			
-			//declares and initialized variable to store size of string
-			auto inputStringSize = 0;
-			
 			//step 2 - wstring_toString -> string
 			auto modifiedString = wstring_to_string(command_text);
 			
 			//step 3 - c_str() -> char*, size() -> unsigned_int
-			char* modifiedStringTwo = std::strcpy(modifiedStringTwo, modifiedString.c_str());
-
-			inputStringSize = modifiedString.size();
+			auto inputStringSize = modifiedString.size();
 
 			//step 4 - compute_Md5 (char*, unsinged_int -> Md5Digest
-			auto stringDigest = compute_md5(modifiedStringTwo, inputStringSize);
+			auto stringDigest = compute_md5(modifiedString.c_str(), inputStringSize);
 
 			//step 5 - get_str_from_Md5 -> wstring
 			auto returnString = get_str_from_md5(stringDigest);
 
-			return command_text;
+			return returnString;
 		}
 	};
 }

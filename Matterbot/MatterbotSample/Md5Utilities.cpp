@@ -16,7 +16,7 @@ string lospi::wstring_to_string(const wstring &ws)
   return string(ws.begin(), ws.end());
 }
 
-Md5Digest lospi::compute_md5(char* data, unsigned long size)
+Md5Digest lospi::compute_md5(const char* data, unsigned long size)
 {
 	MD5_CTX context;
 	MD5_Init(&context);

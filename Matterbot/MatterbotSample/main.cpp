@@ -19,16 +19,16 @@ int main() {
     incoming_hook_route = L"services/T4Z1QAKSS/B4ZBTV7HP/Zzk6zaWMGRJdvTb6IyfUfGaU",
     outgoing_hook_route = L"http://127.0.0.1:9000/",
     outgoing_hook_token = L"7mcke6WANSlZrv4Jpdy5vHYo",
-    welcome_message = L"bot is running.";
+    welcome_message = L"Hello Dave.";
 
   try {
     auto bot = make_shared<Matterbot>(mattermost_url, incoming_hook_route, outgoing_hook_route, outgoing_hook_token);
     bot->set_logger(make_unique<ConsoleLogger>());
     bot->register_command(make_shared<EchoCommand>());
 	bot->register_command(make_shared<WeatherCommand>());
-	bot->register_command(make_shared<TheDonald>());
+	//bot->register_command(make_shared<TheDonald>());
+	bot->register_command(make_shared<Rivestment>());
     bot->register_command(make_shared<ReverseCommand>(bot));
-	bot->register_command(make_shared<Rivestment>(bot));
     bot->post_message(welcome_message);
 
     wstring console;

@@ -1,8 +1,10 @@
 #pragma once
 #include "Matterbot.h"
-#include "json.hpp"
 #include <chrono>
 #include <thread>
+//#include <json/json.h>
+#include <fstream>
+#include "Md5Utilities.h"
 
 namespace lospi
 {
@@ -22,10 +24,13 @@ namespace lospi
 			system("start C:\\Users\\DOTlaptop\\Documents\\GitHub\\matterbot\\Matterbot\\MatterbotSample\\gettweet.ps1\"");
 			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
+			std::ifstream twitter_file("tweet.json", std::ifstream::binary);
+			//Json::Value message;
+			//twitter_file >> message;
+			//auto msg = message["text"];
+			//auto messageText = string_to_wstring(msg.asString());
 
-
-
-			return command_text;
+			//return messageText;
 		}
 	};
 }
