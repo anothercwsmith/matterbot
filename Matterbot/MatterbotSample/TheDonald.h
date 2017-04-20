@@ -1,5 +1,6 @@
 #pragma once
 #include "Matterbot.h"
+#include "json.hpp"
 #include <chrono>
 #include <thread>
 
@@ -20,6 +21,8 @@ namespace lospi
 
 			system("start C:\\Users\\DOTlaptop\\Documents\\GitHub\\matterbot\\Matterbot\\MatterbotSample\\gettweet.ps1\"");
 			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+
 
 
 			return command_text;

@@ -6,6 +6,7 @@
 #include "WeatherCommand.h"
 #include "ReverseCommand.h"
 #include "TheDonald.h"
+#include "Rivestment.h"
 
 #define ERROR_SUCCESS 0
 #define ERROR_FAILURE -1
@@ -27,6 +28,7 @@ int main() {
 	bot->register_command(make_shared<WeatherCommand>());
 	bot->register_command(make_shared<TheDonald>());
     bot->register_command(make_shared<ReverseCommand>(bot));
+	bot->register_command(make_shared<Rivestment>(bot));
     bot->post_message(welcome_message);
 
     wstring console;
