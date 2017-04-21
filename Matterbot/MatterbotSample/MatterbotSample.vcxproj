@@ -171,6 +171,7 @@
   <ItemGroup>
     <ClInclude Include="EchoCommand.h" />
     <ClInclude Include="ConsoleLogger.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="Md5.h" />
     <ClInclude Include="Md5Utilities.h" />
     <ClInclude Include="ReverseCommand.h" />

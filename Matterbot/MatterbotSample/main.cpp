@@ -26,7 +26,7 @@ int main() {
     bot->set_logger(make_unique<ConsoleLogger>());
     bot->register_command(make_shared<EchoCommand>());
 	bot->register_command(make_shared<WeatherCommand>());
-	//bot->register_command(make_shared<TheDonald>());
+	bot->register_command(make_shared<TheDonald>());
 	bot->register_command(make_shared<Rivestment>());
     bot->register_command(make_shared<ReverseCommand>(bot));
     bot->post_message(welcome_message);
