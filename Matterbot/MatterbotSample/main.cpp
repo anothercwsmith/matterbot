@@ -9,8 +9,7 @@
 #include "TheDonald.h"
 #include "password.h"
 #include "level.h"
-#include "compute.h"
-#include "Challenge.h"
+#include "challenges.h"
 #include "Rivestment_Request.h"
 
 #define ERROR_SUCCESS 0
@@ -22,7 +21,7 @@ using namespace lospi;
 int main() {
   wstring mattermost_url = L"https://hooks.slack.com",
     incoming_hook_route = L"services/T4Z1QAKSS/B4ZBTV7HP/Zzk6zaWMGRJdvTb6IyfUfGaU",
-    outgoing_hook_route = L"http://127.0.0.1:9000/",
+    outgoing_hook_route = L"http://127.0.0.1:9005/",
     outgoing_hook_token = L"7mcke6WANSlZrv4Jpdy5vHYo",
     welcome_message = L"Hello Dave.";
 
@@ -32,11 +31,10 @@ int main() {
     bot->register_command(make_shared<EchoCommand>());
 	bot->register_command(make_shared<WeatherCommand>());
 	bot->register_command(make_shared<TheDonald>());
-	bot->register_command(make_shared<Compute>());
-	bot->register_command(make_shared<Password>());
-	bot->register_command(make_shared<Level>());
+	bot->register_command(make_shared<Challenges>(bot));
+	bot->register_command(make_shared<Password>(bot));
+	bot->register_command(make_shared<Level>(bot));
 	bot->register_command(make_shared<Request>());
-	bot->register_command(make_shared<Challenge>());
     bot->register_command(make_shared<ReverseCommand>(bot));
     bot->post_message(welcome_message);
 

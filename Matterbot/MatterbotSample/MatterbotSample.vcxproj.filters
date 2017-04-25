@@ -62,10 +62,10 @@
     <ClInclude Include="Rivestment_Request.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Challenge.h">
+    <ClInclude Include="automation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="compute.h">
+    <ClInclude Include="challenges.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

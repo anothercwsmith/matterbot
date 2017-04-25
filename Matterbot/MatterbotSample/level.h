@@ -13,17 +13,13 @@ namespace lospi
 	int levelIntEndValue = 0;
 
 	struct Level : ICommand {
-		std::wstring get_name() override {
-			return L"level";
-		}
+		explicit Level(std::shared_ptr<Matterbot> bot) : bot{ bot } { }
+		std::wstring get_name() override { return L"level"; }
 
-		std::wstring get_help() override {
-			return L"`level [MESSAGE]`: `level` will request and set the rivestment level you want to play.";
-		}
+		std::wstring get_help() override { return L"`level [MESSAGE]`: `level` will request and set the rivestment level you want to play."; }
 
-		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
-			const std::wstring &user, const std::wstring &command_text) override {
-			
+		std::wstring handle_command(const std::wstring &team, const std::wstring &channel, const std::wstring &user, const std::wstring &command_text) override
+		{	
 			level = wstring_to_string(command_text);
 
 			levelIntValue = std::stoi(level);
@@ -34,7 +30,9 @@ namespace lospi
 
 			auto levelEndWString = string_to_wstring(levelEnd);
 			
-			return levelEndWString;
+			return L"Your level is has been set to: " + levelEndWString;
 		}
+	private:
+		std::shared_ptr<Matterbot> bot;
 	};
 }
