@@ -169,13 +169,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Challenge.h" />
     <ClInclude Include="EchoCommand.h" />
     <ClInclude Include="ConsoleLogger.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="level.h" />
     <ClInclude Include="Md5.h" />
     <ClInclude Include="Md5Utilities.h" />
+    <ClInclude Include="password.h" />
     <ClInclude Include="ReverseCommand.h" />
-    <ClInclude Include="Rivestment.h" />
+    <ClInclude Include="compute.h" />
+    <ClInclude Include="Rivestment_Request.h" />
     <ClInclude Include="TheDonald.h" />
     <ClInclude Include="WeatherCommand.h" />
   </ItemGroup>

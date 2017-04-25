@@ -1,12 +1,17 @@
 #include "Matterbot.h"
 #include <iostream>
 #include <sstream>
+#include <unordered_map>
 #include "ConsoleLogger.h"
 #include "EchoCommand.h"
 #include "WeatherCommand.h"
 #include "ReverseCommand.h"
 #include "TheDonald.h"
-#include "Rivestment.h"
+#include "password.h"
+#include "level.h"
+#include "compute.h"
+#include "Challenge.h"
+#include "Rivestment_Request.h"
 
 #define ERROR_SUCCESS 0
 #define ERROR_FAILURE -1
@@ -27,7 +32,11 @@ int main() {
     bot->register_command(make_shared<EchoCommand>());
 	bot->register_command(make_shared<WeatherCommand>());
 	bot->register_command(make_shared<TheDonald>());
-	bot->register_command(make_shared<Rivestment>());
+	bot->register_command(make_shared<Compute>());
+	bot->register_command(make_shared<Password>());
+	bot->register_command(make_shared<Level>());
+	bot->register_command(make_shared<Request>());
+	bot->register_command(make_shared<Challenge>());
     bot->register_command(make_shared<ReverseCommand>(bot));
     bot->post_message(welcome_message);
 
@@ -41,6 +50,7 @@ int main() {
       if (L"" != console) { bot->post_message(console); }
     }
   }
+
   catch (exception e) {
     wcerr << "[-] Unhandled exception:" << e.what() << endl;
     return ERROR_FAILURE;

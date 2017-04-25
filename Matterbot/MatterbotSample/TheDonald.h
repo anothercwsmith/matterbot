@@ -47,7 +47,7 @@ namespace lospi
 
 
 			system("python C:\\Users\\DOTlaptop\\Documents\\GitHub\\matterbot\\Matterbot\\MatterbotSample\\tweet.py\"");
-			std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
 			std::ifstream twitter_file("tweet.json", std::ifstream::binary);
 			
