@@ -7,10 +7,10 @@
 
 namespace lospi
 {
-	std::string level = { NULL };
-	int levelIntValue = 0;
-	std::string levelEnd = { NULL };
-	int levelIntEndValue = 0;
+	int level = 1;
+	bool lvlChanged = false;
+	bool hashesBuilt = false;
+	
 
 	struct Level : ICommand {
 		explicit Level(std::shared_ptr<Matterbot> bot) : bot{ bot } { }
@@ -20,17 +20,15 @@ namespace lospi
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel, const std::wstring &user, const std::wstring &command_text) override
 		{	
-			level = wstring_to_string(command_text);
+			if (user != L"anothercwsmith") {
+				return L"I am sorry Dave. I must kill you now.";
+			}
 
-			levelIntValue = std::stoi(level);
+			level = std::stoi(command_text);
+			lvlChanged = true;
+			hashesBuilt = false;
 
-			levelIntEndValue = levelIntValue + 10;
-
-			levelEnd = std::to_string(levelIntEndValue);
-
-			auto levelEndWString = string_to_wstring(levelEnd);
-			
-			return L"Your level is has been set to: " + levelEndWString;
+			return L"Your current level is now " + std::to_wstring(level);
 		}
 	private:
 		std::shared_ptr<Matterbot> bot;
