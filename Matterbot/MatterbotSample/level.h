@@ -8,8 +8,8 @@
 namespace lospi
 {
 	int level = 1;
-	bool lvlChanged = false;
-	bool hashesBuilt = false;
+	bool levelChanged = false;
+	long unsigned int hashesBuiltTotal = 0;
 	
 
 	struct Level : ICommand {
@@ -24,11 +24,12 @@ namespace lospi
 				return L"I am sorry Dave. I must kill you now.";
 			}
 
-			level = std::stoi(command_text);
-			lvlChanged = true;
-			hashesBuilt = false;
+			bot->post_message(L"rivestment level " + command_text);
 
-			return L"Your current level is now " + std::to_wstring(level);
+			level = std::stoi(command_text);
+			hashesBuiltTotal = 0;
+			levelChanged = true;
+			return L"Confirmation Message: Your current level is now " + std::to_wstring(level);
 		}
 	private:
 		std::shared_ptr<Matterbot> bot;

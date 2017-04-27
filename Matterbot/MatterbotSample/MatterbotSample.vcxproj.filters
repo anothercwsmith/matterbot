@@ -71,6 +71,15 @@
     <ClInclude Include="Status.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="pass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lvl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="chal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

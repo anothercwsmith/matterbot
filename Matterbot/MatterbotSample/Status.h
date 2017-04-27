@@ -7,7 +7,6 @@
 
 namespace lospi
 {
-	long unsigned int hashesBuiltTotal  = 0;
 	long unsigned int toBuild;
 	long unsigned int left;
 

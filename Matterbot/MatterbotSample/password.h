@@ -11,14 +11,14 @@ namespace lospi
 		explicit Password(std::shared_ptr<Matterbot> bot) : bot{ bot } { }
 		std::wstring get_name() override { return L"password"; }
 
-		std::wstring get_help() override { return L"`password [MESSAGE]`: `password` will request and recieve a password from rivestment.";}
+		std::wstring get_help() override { return L"";}
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel, const std::wstring &user, const std::wstring &command_text) override
 		{
 			password = wstring_to_string(command_text);
 			auto returnPassword = string_to_wstring(password);
 
-			return L"Your password has been set to: " + returnPassword;
+			return L"Confirmation Message: Your password has been set to: " + returnPassword;
 		}
 	private:
 		std::shared_ptr<Matterbot> bot;

@@ -170,8 +170,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="automation.h" />
+    <ClInclude Include="chal.h" />
     <ClInclude Include="EchoCommand.h" />
     <ClInclude Include="ConsoleLogger.h" />
+    <ClInclude Include="lvl.h" />
+    <ClInclude Include="pass.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="level.h" />
     <ClInclude Include="Md5.h" />

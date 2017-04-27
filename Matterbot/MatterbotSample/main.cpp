@@ -9,7 +9,9 @@
 #include "TheDonald.h"
 #include "level.h"
 #include "Status.h"
+#include "pass.h"
 #include "password.h"
+#include "chal.h"
 #include "challenges.h"
 #include "Rivestment_Request.h"
 
@@ -33,9 +35,11 @@ int main() {
 	bot->register_command(make_shared<WeatherCommand>());
 	bot->register_command(make_shared<TheDonald>());
 	bot->register_command(make_shared<Status>(bot));
+	bot->register_command(make_shared<Chal>(bot));
 	bot->register_command(make_shared<Challenges>(bot));
 	bot->register_command(make_shared<Password>(bot));
 	bot->register_command(make_shared<Level>(bot));
+	bot->register_command(make_shared<Pass>(bot));
 	bot->register_command(make_shared<Request>());
     bot->register_command(make_shared<ReverseCommand>(bot));
     bot->post_message(welcome_message);
